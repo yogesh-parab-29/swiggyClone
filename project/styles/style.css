@@ -1,0 +1,186 @@
+.std-title-minor, body .rc-container .rc-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0px;
+}
+
+.std-description, body .rc-container .rc-category, body .rc-container .rc-card div {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 5px 0px;
+}
+
+body {
+  margin: unset;
+  padding: unset;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+body header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #f36311;
+  margin: auto;
+  max-width: 1200px;
+}
+body header .brand-logo {
+  flex: 1;
+  width: 100px;
+  height: 50px;
+}
+body header .brand-logo img {
+  width: 100%;
+  height: 100%;
+}
+body header .brand-title {
+  padding: 0px 10px;
+}
+body header .navbar-list {
+  flex: 10;
+  display: flex;
+  list-style-type: none;
+  justify-content: end;
+}
+body header .navbar-list li {
+  text-decoration: none;
+  margin: 0px 20px;
+}
+body .rc-container {
+  width: 1200px;
+  display: flex;
+  margin: auto;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+body .rc-container .rc-card {
+  width: calc(25% - 40px);
+  margin: 20px;
+}
+body .rc-container .rc-card div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body .rc-container .rc-card div span.skeleton-text {
+  width: 25%;
+  height: 14px;
+}
+body .rc-container .rc-card div.rc-quick-view {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: unset;
+  padding: 15px;
+  padding-bottom: unset;
+  border-top: 1px solid #969292;
+  visibility: hidden;
+}
+body .rc-container .rc-card div.rc-quick-view.skeleton {
+  visibility: visible !important;
+}
+body .rc-container .rc-card div.rc-quick-view span {
+  color: #349be4;
+}
+body .rc-container .rc-card div.rc-quick-view span.skeleton-text {
+  width: 40%;
+  height: 24px;
+}
+body .rc-container .rc-card:hover {
+  margin: unset;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+body .rc-container .rc-card:hover .rc-quick-view {
+  visibility: visible;
+}
+body .rc-container .rc-card:hover .rc-quick-view span:hover {
+  color: #969292;
+  cursor: pointer;
+}
+body .rc-container .rc-img-container {
+  width: 100%;
+  height: 160px;
+}
+body .rc-container .rc-img {
+  width: 100%;
+  height: 100%;
+}
+body .rc-container .rc-name.skeleton-text {
+  width: 100%;
+  height: 24px;
+}
+body .rc-container .rc-category {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .rc-container .rc-category.skeleton-text {
+  width: 100%;
+  height: 18px;
+}
+body .search-container {
+  width: 490px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  padding: 20px 0px;
+}
+body input#search-bar {
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #d0cfce;
+  outline: none;
+}
+body input#search-bar:focus {
+  border: 1px solid #008abf;
+  transition: 0.35s ease;
+  color: #008abf;
+}
+body input#search-bar:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+body input#search-bar:focus::-moz-placeholder {
+  -moz-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+body input#search-bar:focus:-ms-placeholder {
+  -ms-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+body .search-icon {
+  position: relative;
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+
+.skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+.skeleton-text {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
