@@ -1,7 +1,7 @@
 Swiggy Clone
 ------------------------
 
-This is a React project that simulates the functionality of Swiggy on a learning project level, a popular online food ordering and delivery platform in India.
+This is a React project that simulates the functionality of Swiggy, a popular online food ordering and delivery platform in India.
 
 Installation
 ------------------------------
