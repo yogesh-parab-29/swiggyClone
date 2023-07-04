@@ -1,0 +1,708 @@
+@charset "UTF-8";
+.std-title-minor, body .section h1, body .restaurant-card .rc-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 5px 0px;
+}
+
+.std-description, body .cart-section .section .cart-summary .bill-title, body .section h5, body .restaurant-card .rc-category, body .restaurant-card .rc-card div {
+  font-size: 12px;
+  font-weight: 300;
+  margin: 5px 0px;
+}
+
+body {
+  margin: unset !important;
+  padding: unset;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+body a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+body header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  padding: 5px 80px;
+}
+body header .brand-logo {
+  flex: 1;
+  width: 100px;
+  height: 50px;
+}
+body header .brand-logo img {
+  width: 100%;
+  height: 100%;
+}
+body header .brand-title {
+  padding: 0px 10px;
+}
+body header .navbar-list {
+  flex: 10;
+  display: flex;
+  list-style-type: none;
+  justify-content: flex-end;
+}
+body header .navbar-list li {
+  text-decoration: none;
+  margin: 0px 20px;
+}
+body header .navbar-list li a {
+  position: relative;
+  transition: color 0.3s;
+}
+body header .navbar-list li a:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transform: translateX(-5px);
+  transition: transform 0.3s, background-color 0.3s;
+}
+body header .navbar-list li a.active {
+  color: #cc7e3a;
+}
+body header .navbar-list li a.active:after {
+  background-color: #cc7e3a;
+  transform: translateX(0);
+}
+body header .navbar-list li a:hover {
+  color: #cc7e3a;
+}
+body header .navbar-list li a:hover:after {
+  background-color: #cc7e3a;
+}
+body .rc-container {
+  width: 1200px;
+  display: flex;
+  margin: auto;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  padding-bottom: 30px;
+}
+body .restaurant-card {
+  width: calc(25% - 40px);
+  margin: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+body .restaurant-card:hover {
+  margin: unset;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+body .restaurant-card:hover .rc-quick-view {
+  visibility: visible !important;
+}
+body .restaurant-card:hover .rc-quick-view span:hover {
+  color: #969292;
+  cursor: pointer;
+}
+body .restaurant-card .rc-card div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+}
+body .restaurant-card .rc-card div span.skeleton-text {
+  width: 25%;
+  height: 14px;
+}
+body .restaurant-card .rc-card div.rc-quick-view {
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: unset;
+  padding: 15px;
+  padding-bottom: unset;
+  border-top: 1px solid #969292;
+  visibility: hidden;
+}
+body .restaurant-card .rc-card div.rc-quick-view.skeleton {
+  visibility: visible !important;
+}
+body .restaurant-card .rc-card div.rc-quick-view span {
+  color: #349be4;
+}
+body .restaurant-card .rc-card div.rc-quick-view span.skeleton-text {
+  width: 40%;
+  height: 24px;
+}
+body .restaurant-card .rc-img-container {
+  width: 100%;
+  height: 160px;
+}
+body .restaurant-card .rc-img {
+  width: 100%;
+  height: 100%;
+}
+body .restaurant-card .rc-name.skeleton-text {
+  width: 100%;
+  height: 24px;
+}
+body .restaurant-card .rc-category {
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .restaurant-card .rc-category.skeleton-text {
+  width: 100%;
+  height: 18px;
+}
+body .search-container {
+  width: 490px;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  padding: 20px 0px;
+}
+body input#search-bar {
+  margin: 0 auto;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: 1px solid #d0cfce;
+  outline: none;
+}
+body input#search-bar:focus {
+  border: 1px solid #008abf;
+  transition: 0.35s ease;
+  color: #008abf;
+}
+body input#search-bar:focus::-webkit-input-placeholder {
+  -webkit-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+body input#search-bar:focus::-moz-placeholder {
+  -moz-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+body input#search-bar:focus:-ms-placeholder {
+  -ms-transition: opacity 0.45s ease;
+  transition: opacity 0.45s ease;
+  opacity: 0;
+}
+body .search-icon {
+  position: relative;
+  float: right;
+  width: 50px;
+  height: 50px;
+}
+body .skeleton {
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 70%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+body .skeleton-text {
+  width: 100%;
+}
+body .section {
+  margin: auto;
+  max-width: 1200px;
+}
+body .section .restaurant-details {
+  margin: 50px auto 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 900px;
+  padding: 20px 0px;
+}
+body .section h1 {
+  font-size: 24px;
+}
+body .section h5 {
+  margin: unset;
+}
+body .section p {
+  margin: unset;
+}
+body .section .restaurant-info {
+  flex-basis: 80%;
+  display: flex;
+  gap: 20px;
+}
+body .section .restaurant-info .restaurant-image {
+  width: 120px;
+  height: 100px;
+  border-radius: 10px;
+}
+body .section .restaurant-info .restaurant-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body .section .restaurant-rating {
+  box-sizing: border-box;
+  flex-basis: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid gray;
+  justify-content: center;
+  padding: 10px 3px;
+  border-radius: 10px;
+  align-items: center;
+}
+body .section .restaurant-rating .restaurant-star-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: unset;
+  font-size: 14px;
+  width: 100%;
+  gap: 5px;
+}
+body .section .restaurant-rating .restaurant-rating-count {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .section .restaurant-rating .restaurant-rating-count:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-top: 1px dashed gray;
+  margin-top: 5px; /* Adjust the margin-top value as needed */
+}
+body .section .restaurant-detail {
+  width: 100%;
+  border-top: 1px dashed grey;
+}
+body .section .restaurant-detail .restaurant-price {
+  margin: 10px 0px;
+  font-size: 18px;
+  font-weight: 400;
+}
+body .section .restaurant-detail .restaurant-price .wallet-icon {
+  margin-right: 5px;
+}
+body .menu-section {
+  padding: 15px 0px;
+  max-width: 900px;
+  margin: auto;
+  border-top: 1px solid #eee;
+  border-bottom: 20px solid #f0f0f0;
+}
+body .menu-section .menu-title {
+  font-size: 20px;
+}
+body .menu-section .accordion-header {
+  cursor: pointer;
+  position: relative;
+}
+body .menu-section .accordion-header:before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  top: 5px;
+  border-style: solid;
+  border-width: 6px 6px 0 6px;
+  border-color: #000 transparent transparent transparent;
+  transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+body .menu-section .accordion-header.open:before {
+  transform: rotate(180deg); /* Rotate the arrow when the accordion is open */
+}
+body .menu-section .accordion-child {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+body .menu-section .accordion-child.open {
+  max-height: 100%;
+  transition: max-height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+body .menu-section .menu-category {
+  margin: 10px 0px;
+}
+body .menu-section .menu-list {
+  margin-top: 10px;
+}
+body .menu-section .menu-list .dish-info-container {
+  display: flex;
+  padding: 15px 0px 30px 0px;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-left {
+  flex-basis: 75%;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-left .dish-name {
+  margin: unset;
+  font-weight: 400;
+  font-size: 18px;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-left .dish-price {
+  font-weight: 400;
+  font-size: 14px;
+  margin: unset;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-left .dish-price:before {
+  content: "₹";
+  margin-right: 3px;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-left .dish-description {
+  margin: unset;
+  padding-top: 10px;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-right {
+  position: relative;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-right .dish-img-container {
+  width: 118px;
+  height: 98px;
+  overflow: hidden;
+  border-radius: 20px;
+  text-align: end;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-right .dish-img-container .dish-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .menu-section .menu-list .dish-info-container .dish-info-right .add-to-cart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  background: #fff;
+  width: 75px;
+  height: 30px;
+  text-wrap: nowrap;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+body .item-count {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  align-items: center;
+  width: 75px;
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+body .item-count .subtract,
+body .item-count .add {
+  cursor: pointer;
+  padding: 0px 10px;
+}
+body .about-container {
+  background-color: #f5f5f5;
+  padding: 40px 0px;
+}
+body .about-section {
+  background: #fff;
+  margin: 80px auto;
+  padding: 30px;
+  width: 1000px;
+}
+body .about-section .section-block {
+  padding: 15px 0px;
+  border-bottom: 2px solid lightgray;
+}
+body .about-section .section-block:first-child {
+  border-top: 2px solid lightgray;
+}
+body .about-section .section-block .section-title {
+  cursor: pointer;
+}
+body .about-section .section-block .section-title + h4 {
+  font-weight: 400;
+}
+body .about-section .about-info {
+  width: 100%;
+  display: flex;
+}
+body .about-section .about-info .info-brief {
+  flex: 1;
+}
+body .about-section .about-info .info-brief h3,
+body .about-section .about-info .info-brief h4 {
+  margin: 10px 0px;
+}
+body .about-section .about-info .info-brief h3 {
+  font-size: 20px;
+}
+body .about-section .about-info .info-brief span {
+  color: #cc7e3a;
+}
+body .about-section .about-info .info-image {
+  flex: 1;
+  overflow: hidden;
+}
+body .about-section .about-info .info-image img {
+  width: 250px;
+  width: 50%;
+  transition: transform 0.3s;
+}
+body .about-section .about-info .info-image img:hover {
+  transform-origin: 10.66% 0.66%;
+  transform: scale(1.5);
+}
+body .cart-section {
+  background: #f5f5f5;
+  height: 80vh;
+}
+body .cart-section .section {
+  display: flex;
+  padding: 30px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+body .cart-section .section .user-details {
+  flex: 4;
+}
+body .cart-section .section .user-details h3 {
+  margin: unset;
+  font-weight: 600;
+}
+body .cart-section .section .user-details h3 + p {
+  color: #969292;
+  padding: 5px 0px;
+}
+body .cart-section .section .user-details .user-basicInfo {
+  background: #ffffff;
+  padding: 30px;
+}
+body .cart-section .section .user-details .user-basicInfo:not(:first-child) {
+  margin-top: 20px;
+}
+body .cart-section .section .user-details .title-text {
+  margin-top: 50px;
+  font-size: 14px;
+}
+body .cart-section .section .user-details .title-text a {
+  margin: unset;
+  color: #f36311;
+}
+body .cart-section .section .user-details .title-text a:hover {
+  margin: unset;
+  padding: unset;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+body .cart-section .section .cart-summary {
+  background: #ffffff;
+  flex: 2;
+  padding: 30px;
+}
+body .cart-section .section .cart-summary .empty-cart-alert {
+  padding: 20px 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+body .cart-section .section .cart-summary .order-info {
+  position: relative;
+  display: flex;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  padding: 10px 5px;
+  border-left: 5px solid grey;
+}
+body .cart-section .section .cart-summary .order-info .res-dish {
+  font-size: 14px;
+  width: 180px;
+}
+body .cart-section .section .cart-summary .order-info .item-count {
+  box-sizing: border-box;
+  flex: 1;
+  position: unset;
+  transform: unset;
+}
+body .cart-section .section .cart-summary .order-info .item-price {
+  text-align: end;
+  flex: 1;
+}
+body .cart-section .section .cart-summary .order-bill-details {
+  padding: 20px 5px;
+  border-top: 2px solid lightgray;
+  border-bottom: 2px solid lightgray;
+}
+body .cart-section .section .cart-summary .bill-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body .cart-section .section .cart-summary .bill-title {
+  font-size: 14px;
+  text-align: center;
+}
+body .cart-section .section .cart-summary .bill-title::after {
+  display: inline-block;
+  margin-left: 3px;
+  width: 18px;
+  height: 18px;
+  content: "";
+  background-image: url(../resources/img/info-svgrepo-com.png);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+body .cart-section .section .cart-summary .bill-amount::before {
+  content: "₹";
+}
+body .cart-section .section .cart-summary .order-info-summary {
+  border-top: 2px solid lightgray;
+  padding: 20px 5px;
+}
+body .btn-section {
+  padding: 20px 0px;
+}
+body .btn-container {
+  display: flex;
+  justify-content: end;
+}
+body .secondary-btn,
+body .primary-btn {
+  padding: 10px 25px;
+  background: #fff;
+  border: 2px solid #60b247;
+  cursor: pointer;
+}
+body .secondary-btn:hover,
+body .primary-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 10px 0px;
+}
+body .secondary-btn span,
+body .primary-btn span {
+  margin-top: 2px;
+  font-weight: 600;
+}
+body .secondary-btn p,
+body .primary-btn p {
+  font-size: 14px;
+}
+body .primary-btn {
+  margin-left: 20px;
+  color: #fff;
+  background: #60b247;
+}
+body .secondary-btn {
+  color: #60b247;
+}
+body .modal-section {
+  /* Modal Content */
+  /* Add Animation */
+  /* The Close Button */
+}
+body .modal-section .modal {
+  /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.1); /* Black w/ opacity */
+}
+body .modal-section .modal h1,
+body .modal-section .modal h2,
+body .modal-section .modal h3,
+body .modal-section .modal h4,
+body .modal-section .modal h5 {
+  margin: unset;
+  padding: unset;
+}
+body .modal-section .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+body .modal-section .close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+body .modal-section .close:hover,
+body .modal-section .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+body .modal-section .modal-header {
+  padding: 20px 16px 0 16px;
+}
+body .modal-section .modal-body {
+  padding: 20px 16px;
+}
+body .modal-section .show-div {
+  display: block;
+}
+body .modal-section .hide-div {
+  display: none;
+}
+body .footer {
+  padding: 20px 0px;
+  margin-top: 20px;
+  position: relative;
+  bottom: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+}
+body .footer p {
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

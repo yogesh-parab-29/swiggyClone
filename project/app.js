@@ -1,32 +1,56 @@
-// import React from "react";
-// import ReactDOM from "react-dom/client";
-
-import React from "react";
+import React, { Suspense, lazy, useContext, useState } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
+import Header from "./src/components/Header";
+import Body from "./src/components/Body";
+import Footer from "./src/components/Footer";
+import AboutUs from "./src/components/AboutUs";
+import Error from "./src/components/Error";
+import Cart from "./src/components/Cart";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestaurantData from "./src/components/RestaurantData";
+import userContext from "./src/utilities/userContext";
+import { Provider } from "react-redux";
+import store from "./src/utilities/store";
 
-// const title = <h1>Namaste React!!!!</h1>;
+const AppLayout = () => {
 
-// const Heading = () => {
-//   return (
-//     <div>
-//       {title}
-//       <h2>Namaste React Functional Component</h2>
-//       <h2>This is H2 tag</h2>
-//     </div>
-//   );
-// };
+  return (
+    <Provider store={store}>
+      <Header />
+      <Outlet />
+      <Footer />
+    </Provider>
+  );
+};
 
-const AppLayout = ()=>(
-  <>
-  <Header/>
-  <Body/>
-  <Footer/>
-  </>
-)
+const Router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantData />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout/>);
+root.render(<RouterProvider router={Router} />);
+
+
